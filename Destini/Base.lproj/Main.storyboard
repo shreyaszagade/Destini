@@ -52,6 +52,16 @@
                                     <action selector="answerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmm-tN-73p"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-tH-ckI">
+                                <rect key="frame" x="16" y="20" width="57" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47a-As-rWP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,18 +74,21 @@
                             <constraint firstItem="Rzw-er-UZM" firstAttribute="height" secondItem="N1b-LV-ggU" secondAttribute="height" id="YRA-cG-CgF"/>
                             <constraint firstItem="Rzw-er-UZM" firstAttribute="width" secondItem="N1b-LV-ggU" secondAttribute="width" id="YiP-xI-qsj"/>
                             <constraint firstItem="Rzw-er-UZM" firstAttribute="top" secondItem="zzt-AO-7es" secondAttribute="bottom" id="YqS-dt-hKe"/>
+                            <constraint firstItem="Y6o-tH-ckI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d1Z-yr-AC9"/>
                             <constraint firstItem="Rzw-er-UZM" firstAttribute="centerX" secondItem="N1b-LV-ggU" secondAttribute="centerX" id="fD8-5q-E1m"/>
                             <constraint firstItem="zzt-AO-7es" firstAttribute="width" secondItem="Rzw-er-UZM" secondAttribute="width" id="iv9-mK-8eH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Fs9-nH-83a" secondAttribute="top" constant="20" id="jOj-OJ-CDe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fs9-nH-83a" secondAttribute="trailing" id="oFo-Ga-yMT"/>
                             <constraint firstItem="N1b-LV-ggU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="sDm-U2-Sdq"/>
                             <constraint firstItem="N1b-LV-ggU" firstAttribute="top" secondItem="Rzw-er-UZM" secondAttribute="bottom" constant="32" id="vb2-6I-cvR"/>
+                            <constraint firstItem="Y6o-tH-ckI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zl9-5w-4OD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bottomButton" destination="N1b-LV-ggU" id="yug-OI-dhp"/>
                         <outlet property="questionLabel" destination="zzt-AO-7es" id="TVz-io-vd1"/>
+                        <outlet property="restartButton" destination="Y6o-tH-ckI" id="bwa-CG-47S"/>
                         <outlet property="topButton" destination="Rzw-er-UZM" id="tUM-cF-WlF"/>
                     </connections>
                 </viewController>

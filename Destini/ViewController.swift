@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
     
     var currentState : Int = 1
     
@@ -77,6 +78,7 @@ class ViewController: UIViewController {
         var answer2 = ""
         switch currentState {
         case 1:
+            hideRestartButton()
             question = story1
             answer1 = answer1a
             answer2 = answer1b
@@ -90,10 +92,13 @@ class ViewController: UIViewController {
             answer2 = answer3b
         case 4:
             question = story4
+            showRestartButton()
         case 5:
             question = story5
+            showRestartButton()
         case 6:
             question = story6
+            showRestartButton()
         default:
             question = ""
         }
@@ -101,6 +106,22 @@ class ViewController: UIViewController {
         topButton.setTitle(answer1, for: UIControlState.normal)
         bottomButton.setTitle(answer2, for: .normal)
     }
-
+    @IBAction func restartButtonClicked(_ sender: UIButton) {
+        currentState = 1
+        changeQuestionAnswer()
+    }
+    
+    func showRestartButton(){
+        restartButton.isHidden = false
+        topButton.isHidden = true
+        bottomButton.isHidden = true
+    }
+    
+    func hideRestartButton(){
+        restartButton.isHidden = true
+        topButton.isHidden = false
+        bottomButton.isHidden = false
+    }
+    
 }
 
