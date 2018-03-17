@@ -32,10 +32,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
     
+    var currentState : Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        changeQuestionAnswer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +45,62 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func answerClicked(_ sender: UIButton) {
-        
+        switch currentState {
+        case 1:
+            if sender.tag == 1 {
+                currentState = 3
+            }else{
+                currentState = 2
+            }
+        case 2:
+            if sender.tag == 1 {
+                currentState = 3
+            }else{
+                currentState = 4
+            }
+        case 3:
+            if sender.tag == 1 {
+                currentState = 6
+            }else{
+                currentState = 5
+            }
+        default:
+            print("End of Game")
+            return
+        }
+        changeQuestionAnswer()
     }
     
+    func changeQuestionAnswer(){
+        var question = ""
+        var answer1 = ""
+        var answer2 = ""
+        switch currentState {
+        case 1:
+            question = story1
+            answer1 = answer1a
+            answer2 = answer1b
+        case 2:
+            question = story2
+            answer1 = answer2a
+            answer2 = answer2b
+        case 3:
+            question = story3
+            answer1 = answer3a
+            answer2 = answer3b
+        case 4:
+            question = story4
+        case 5:
+            question = story5
+        case 6:
+            question = story6
+        default:
+            question = ""
+        }
+        questionLabel.text = question
+        topButton.setTitle(answer1, for: UIControlState.normal)
+        bottomButton.setTitle(answer2, for: .normal)
+    }
 
 }
 
